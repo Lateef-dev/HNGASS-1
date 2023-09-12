@@ -24,7 +24,7 @@ const updateDayOfWeekAndTime = () => {
     const time = currentDate.toLocaleString(undefined, timeOptions)
 
     currentDayText.textContent = `${dayOfWeek}`;
-    currentTime.textContent = `${time}`;
+    currentTime.textContent = new Date().getTime();
 
 }
 
