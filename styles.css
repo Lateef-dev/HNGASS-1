@@ -10,6 +10,8 @@
 
 --secondary-color: rgba(255, 185, 0, 0.8);
 --secondary-color-dark: rgba(255, 119, 48, 0.8);
+--secondary-color-darker: rgba(255, 119, 48, 1);
+
 
 --tertiary-color-light: rgba(41, 152, 255, 0.9);
 --tertiary-color-dark: rgba(86, 67, 250, 0.9);
@@ -24,6 +26,7 @@ body {
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
+    font-size: 62.5%;
     font-family: 'SpaceGrotesk', sans-serif;
   
     display: flex;
@@ -41,8 +44,8 @@ body {
                       var(--secondary-color), 
                       var(--secondary-color-dark)), 
                       url(laptop.jpg);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     background-size: cover;
     background-position: center;
 }
@@ -82,21 +85,23 @@ body {
     display: inline-block;
     cursor: pointer;
     border-radius: 10rem;
+    font-size: 1rem;
     width: 30%;
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 2.5rem;
     transition: all .2s;
     position: relative;
     border: none;
     text-decoration: none;
-    color: var(--secondary-color);
-    background-color: var(--color-grey-light);
+    color: var(--secondary-color-darker);
+    background-color: rgba(255, 255, 255,.8);
 }
 
 [data-testid="gitHubURL"]:hover{
-    background-color: #fff;
+    background-color: rgba(255, 255, 255,1);
+
     transform: scale(0.99);
     position: relative;
     transition: transform 1s ease;
@@ -109,4 +114,64 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    body {
+        font-size: 60%;
+    }
+
+    .container {
+        width: 85%;
+    }
+}
+
+@media (max-width: 800px) {
+    [data-testid="gitHubURL"] {
+        width: 10rem;
+        padding: 1.2rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+    font-size: 55%;
+   }
+
+    .container {
+        width: 85%;
+        height: 90%;
+    }
+   
+}
+
+@media (max-width: 401px) {
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+    .myDetails {
+        width: 100%;
+    }
+    
+    .track {
+        padding: .8rem;
+        /* width: 10rem; */
+      
+    }
+    
+    [data-testid="gitHubURL"] {
+        width: 50%;
+     
+    }
+
+    .centerContainer {
+       width: 80%;
+    }
+    
+   
 }
